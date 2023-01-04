@@ -149,7 +149,7 @@ console.log(ageLeo, ageJeni, averageAge);
 
 /* ============================================== */
 
-/* ==== String Concatination ==== You can use the "+" operator to add strings to each other  */
+/* === String Concatination === You can use the "+" operator to add strings to each other  */
 const firstName = "Otto";
 const lastName = "Kieffer";
 console.log(firstName + lastName);
@@ -163,7 +163,7 @@ console.log("Mein MacBook hat " + (macBook * mwst) + " gekostet!" );
 // Use an empty string " " to add a space 
 console.log(firstName + " " + lastName);
 
-/* STRINGS AND TEMPLATE LITERALS: a template literal can assamble multiple pices into one final string
+/* == STRINGS AND TEMPLATE LITERALS == : a template literal can assamble multiple pices into one final string
     to wirte a template string use backticks `` */
 
 const leo = "I'm " + firstName + ', a ' + (now - birthyear) + ' years old ' + job + '!';
@@ -197,7 +197,7 @@ console.log(leoBrandNew);
 
 /* === TAKING DECISIONS === if / else statements: can take decsions using if else statements   */
 
-// if/else control structure
+// == if/else control structure ==
 const Currentge = 19;
 
 if(age >= 18) { // condition: any code that returns a true or false value
@@ -210,10 +210,10 @@ if(age >= 18) { // condition: any code that returns a true or false value
 
 /* ============================================== */
 
-/* === TYPE CONVERSION AND TYPE COERCION:  You can covert ?values? by using functions like 'Number' or 'String. 
+/* === TYPE CONVERSION AND TYPE COERCION === :  You can covert ?values? by using functions  like 'Number' or 'String. 
     These have to start with a capiatal letter! You can only conver Numbers, Strings and Booleans. */
 
-// type conversion
+// == type conversion ==
 const inputYear = '1991';
 console.log(Number(inputYear), inputYear);
 console.log(Number(inputYear) + 18);
@@ -222,7 +222,7 @@ console.log(Number('Leo'));
 console.log(typeof NaN);
 console.log(String(23), 23);
 
-//type coercion: JavaScript automatically coverts the value using the operator
+// == type coercion == : JavaScript automatically coverts the value using the operator
 console.log('I am ' + 23 + ' years old');
 console.log('23'- '10' - 3);
 console.log('23' / "2");
@@ -256,8 +256,9 @@ console.log("Der Nuter ist " + howOld + " Jahre alt.") */
 /*     let confirm = window.confirm("Stimmen sie allem auf unserer Seite zu?")
 console.log(confirm) // true */
 
+/* ============================================== */
 
-// Accessing HTML emelents through JS
+// === Accessing HTML emelents through JS ===
 
 // pulling element from HTML to JS and storing the ID headlineOne in a variable
 let headlineOne = document.getElementById("headlineOne"); 
@@ -265,7 +266,7 @@ console.log(headlineOne);
 
 // Changing an HTML element
 
-// innerHTML:
+// == innerHTML == :
 headlineOne.innerHTML += " Tag 2";
 headlineOne.innerHTML += "<span> Tag 2</span>";
 
@@ -275,7 +276,7 @@ let headlineTwo = document.getElementById("headlineTwo");
 headlineTwo.style.backgroundColor = "blue";
 headlineTwo.style.color = "red";
 
-// query selector --> access HTML element and store it in a variable. Will look at all elements but by default selectthe first element
+// == Query Selector == --> access HTML element and store it in a variable. Will look at all elements but by default selectthe first element
 let headlineThree = document.querySelector("h3"); 
 console.log(headlineThree);
 
