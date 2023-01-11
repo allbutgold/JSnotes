@@ -150,7 +150,7 @@ console.log(ageLeo, ageJeni, averageAge);
 /* ============================================== */
 
 /* === String Concatination === You can use the "+" operator to add strings to each other  */
-const firstName = "Otto";
+const firstName = "Karl Werner";
 const lastName = "Kieffer";
 console.log(firstName + lastName);
 
@@ -264,11 +264,16 @@ console.log(confirm) // true */
 let headlineOne = document.getElementById("headlineOne"); 
 console.log(headlineOne);
 
+// pulling multiple Elements by Classname
+let headlineByClassname = document.getElementsByClassName("headlineByClassname")
+console.log(headlineByClassname);
+
 // Changing an HTML element
 
 // == innerHTML == :
-headlineOne.innerHTML += " Tag 2";
-headlineOne.innerHTML += "<span> Tag 2</span>";
+headlineOne.innerHTML = " Tag 2"; // change string
+headlineOne.innerHTML += " Tag 2"; // add string 
+headlineOne.innerHTML += "<span> Tag 2</span>"; // add span tag
 
 let headlineTwo = document.getElementById("headlineTwo");
 
@@ -284,3 +289,52 @@ let headlineFour = document.querySelector("h3:nth-of-type(3)")
 console.log(headlineFour);
 
 headlineFour.style.fontSize = "4rem"
+
+/* ============================================== */
+
+/* === FUNCTIONS === */
+
+// store HTML element in variables. define variables at the start of the document
+let headline = document.getElementById("headline");
+
+// function is defined with the word "function" and contains a function name
+function welcome() {
+    headline.innerHTML += " liebe Teilnehmer!"
+    headline.style.color = "green"
+}
+
+// functions have to be called on 
+welcome();
+
+// function with parameters 
+// parameters are placeholder which can be filled with user input --> pretty much local variables 
+function functionName(parameter1, parameter2) {
+    let result = parameter1 + parameter2
+    console.log(result);
+}
+
+// call 
+functionName(3, 9)
+
+// onClick function
+let container = document.querySelector("section")
+
+function changeColor() {
+    container.style.backgroundColor = "blue"
+}
+
+/* == Acessing Data in a HTML form through a JS function == */
+
+// get Form data 
+const aName = document.getElementById("aName");
+const myAge = document.getElementById("age");
+const range = document.getElementById("range");
+const checkbox = document.getElementById("checkbox");
+const birthday = document.getElementById("birthday");
+
+
+//  Acessing data input of an HTML form through a JS function and storing them in a variable
+function formInput() {
+    const userInput = "Name: " + aName.value + " Alter: " + myAge.value + " Range: " + range.value + " Checkbox: " + checkbox.checked + " Geburtstag: " + birthday.value// to access the value in the form define a new variable in the funtion to store the value in
+    console.log(userInput);
+}

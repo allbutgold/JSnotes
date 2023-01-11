@@ -8,12 +8,45 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <h1 id="headlineOne">JS Einführung</h1>
+    <section>
+        <button onclick="changeColor()">Click Me!</button>
+    </section>
+    <h1 id="headline">Headline</h1>
+    <h1 id="headlineOne">headlineOne</h1>
     <h2 id="headlineTwo">HeadlineTwo</h2>
+    
     <h2>headline</h2>
     <h3>first h3</h3>
     <h3>second h3</h3>
     <h3>third h3</h3>
+    <h2 class="headlineByClassname">headlineByClassname</h2>
+
+    <section>
+        <form onsubmit="return false"> <!-- onsubmit="return false" prevents site from being reloaded if data is not send anywhere-->
+            <h1 id="">Tolle Form</h1>
+            <h2 class="headlineByClassname">headlineByClassname</h2>
+            <h3>Genug ist genug!</h3>
+            <div>
+                <label for="aName">Name</label>
+                <input type="text" name="aName" id="aName" placeholder="Hier Name eintragen">
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age" placeholder="Hier Alter eintragen">
+            </div>
+            <div>
+                <label for="range">Range</label>
+                <input type="range" name="range" id="range">
+            </div>
+            <div>
+                <label for="checkbox">OK?</label>
+                <input type="checkbox" name="checkbox" id="checkbox">
+            </div>
+            <label for="birthday">Geburtstag</label>
+            <input type="date" name="birthday" id="birthday">
+            <input onclick="formInput()" type="submit" value="Senden"> <!-- onclick execute funtion formInput() -->
+        </form>
+    </section>
 
 
     <script src="./assets/JS/notes.js"></script>
