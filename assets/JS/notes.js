@@ -325,7 +325,7 @@ function changeColor() {
 
 /* == Acessing Data in a HTML form through a JS function == */
 
-// get Form data 
+// get Form Elements and store them in variables
 const aName = document.getElementById("aName");
 const myAge = document.getElementById("age");
 const range = document.getElementById("range");
@@ -338,3 +338,36 @@ function formInput() {
     const userInput = "Name: " + aName.value + " Alter: " + myAge.value + " Range: " + range.value + " Checkbox: " + checkbox.checked + " Geburtstag: " + birthday.value// to access the value in the form define a new variable in the funtion to store the value in
     console.log(userInput);
 }
+
+// Classlist 
+const text = document.getElementById("text");
+
+function addStyles() { 
+    text.classList.add("colorFontSize") // add class "colorFontSize" to the element with id "text"
+}
+
+function removeStyles() {
+    text.classList.remove("colorFontSize") // remove class "colorFontSize" from the element with id "text"
+}
+
+// Eventlistener and toggle
+
+const button = document.querySelector("button:nth-of-type(3)")
+
+/* button.addEventListener("click", toggleStyles) // on click execute function toggleStyles()
+
+
+function toggleStyles() {
+    text.classList.toggle("colorFontSize") 
+} */
+
+// short version
+button.addEventListener("click", function() {
+    text.classList.toggle("colorFontSize")
+})
+
+const darkMode = document.querySelector("#darkMode"); // define variable darkMode by selecting the element with id "darkMode"
+
+darkMode.addEventListener("click", function() { // on click of button darkMode toggle CSS class .darkMode
+    document.body.classList.toggle("darkMode");
+})

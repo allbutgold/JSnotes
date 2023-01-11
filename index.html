@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body id="body">
     <section>
         <button onclick="changeColor()">Click Me!</button>
     </section>
@@ -21,6 +21,7 @@
     <h3>third h3</h3>
     <h2 class="headlineByClassname">headlineByClassname</h2>
 
+    <!-- FORM -->
     <section>
         <form onsubmit="return false"> <!-- onsubmit="return false" prevents site from being reloaded if data is not send anywhere-->
             <h1 id="">Tolle Form</h1>
@@ -46,6 +47,15 @@
             <input type="date" name="birthday" id="birthday">
             <input onclick="formInput()" type="submit" value="Senden"> <!-- onclick execute funtion formInput() -->
         </form>
+    </section>
+
+    <!-- Change Styles button -->
+    <section>
+        <button onclick="addStyles()">Add Styles</button>
+        <p id="text">Hier steht Text</p>
+        <button onclick="removeStyles()">removeStyles</button>
+        <button>Toggle Style</button>
+        <button id="darkMode">dark Mode</button>
     </section>
 
 
