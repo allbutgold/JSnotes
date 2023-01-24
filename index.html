@@ -21,7 +21,7 @@
     <h3>third h3</h3>
     <h2 class="headlineByClassname">headlineByClassname</h2>
 
-    <!-- FORM -->
+    <!-- Tolle Form -->
     <section>
         <form onsubmit="return false"> <!-- onsubmit="return false" prevents site from being reloaded if data is not send anywhere-->
             <h1 id="">Tolle Form</h1>
@@ -49,7 +49,16 @@
         </form>
     </section>
 
-    <!-- Change Styles button -->
+    <section>
+        <h3>Altersprüfung</h3>
+        <label for="alterspruefung">Wie alt bist du?</label>
+        <input type="number" name="alterspruefung" id="alterspruefung">
+
+        <button onclick="ageCheck()">Prüfen</button>
+        <p id="ageOutput"></p>
+    </section>rla
+
+    <!-- Change Styles buttons -->
     <section>
         <button onclick="addStyles()">Add Styles</button>
         <p id="text">Hier steht Text</p>
@@ -58,6 +67,13 @@
         <button id="darkMode">dark Mode</button>
     </section>
 
+    <!-- Check month Form === Switch conditional statment -->
+    <form onsubmit="return false">
+        <label for="moth"></label>
+        <input type="number" name="month" placeholder="month" id="month">
+        <button onclick="getNameOfMonth()">check</button>
+        <p id="outputField"></p>
+    </form>
 
     <script src="./assets/JS/notes.js"></script>
 </body>
