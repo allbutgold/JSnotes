@@ -154,9 +154,11 @@ console.log(ageLeo, ageJeni, averageAge);
 
 
 // ====== STRINGS ======
+
 // ==== String Methods ====
 const textOne = "Wo wohnt Stefan?";
 console.log(textOne);
+
 
 // == indexOF ==
 // string.indexOF positions Angabe start counting at 0 
@@ -170,9 +172,11 @@ console.log(stefanIndex); // 9
 const result = textOne.indexOf("hallo")
 console.log(result); // -1 means text does not contain this string.
 
+
 // == includes ==
 // string.includes checks if a string contains another string 
 console.log(textOne.includes("Stefan")); // true
+
 
 // == slice ==
 // string.slice can cut a string and store it in a different one. The original string stays untouched.
@@ -186,6 +190,7 @@ console.log(spring);
 console.log(spring.slice(-1)); // Cuts the last character of a string
 console.log(spring.slice(0)); // Cuts the entire string
 
+
 // == replace ==
 // string.replace replaces first occurence of a string with a new one
 console.log(spring.replace("nah", "fern"));
@@ -193,10 +198,12 @@ console.log(spring.replace("nah", "fern"));
 // string.replaceAll replaces all occurences of a string with a new one
 console.log(spring.replaceAll("nah", "fern"));
 
+
 // == toUpperCase ==
 // string.toUpperCase converts all letters to uppercase
 const lowText = "hier ist alles klein geschrieben.";
 console.log(lowText.toUpperCase());
+
 
 // == toLowerCase ==
 // string.toLowerCase converts all letters to lowercase
@@ -204,10 +211,21 @@ const upText = "HieR IsT AlLEs DoOF.";
 console.log(upText.toLowerCase());
 console.log(upText); // original string will not be changed 
 
+
 // == length ==
 // string.length returns the length of a string
 const username = "SuperUser5000";
 console.log(username.length);
+
+// == concat == 
+// concatenates two strings together
+let stadt = "Berlin";
+let stadTeil = "Neukölln";
+
+let bezirk = stadt.concat(" ", stadTeil);
+console.log(bezirk);
+
+
 
 
 /* === String Concatination === You can use the "+" operator to add strings to each other  */
@@ -481,35 +499,6 @@ if (month > 3 && month <= 6) {
     console.log("Winter");
 }
 
-// Alterspruefung and displaying the result on the page
-let alter = document.getElementById("#alterspruefung");
-const ageOutput = document.querySelector("#ageOutput");
-
-function ageCheck() {
-    const input = alter.value;
-    console.log(input);
-}
-
-
-if (input >= 18) {
-    ageOutput.innerHTML = "Du bist Volljährig!";
-} else if (input < 18 && input >= 0) {
-    ageOutput.innerHTML = "Du bist nicht Volljährig!";
-} else {
-    ageOutput.innerHTML = "Deine Angabe ist ungültig!";
-}
-
-function ageCheck(){
-    const input = alter.value
-    let output = " ";
-
-if (input >= 18) {  
-    output = "Du bist volljährig";
-} else if (input < 18 && input >= 0){
-    output = "Du bist nicht volljahrig";
-} else {
-    output = "Deine Eingabe ist unguültig";
-}}
 
 // === SWITCH Control Structure ===  Switch check if condition is true and then executes code block 
 
@@ -545,3 +534,142 @@ function getNameOfMonth() {
     document.getElementById("outputField").innerHTML = output
     }
     
+
+// === Return ===
+
+function getSender(email) {
+    const atIndex = email.indexOf("@"); // wir suchen den Index des @ in einer Email Adresse 
+    const sender = email.slice(0, atIndex); // we want to cut the substring which comes before the @
+    return sender; // now we return the result of the funtion in a value
+}
+ // hier the parameters will be defined 
+console.log(getSender("leo@superheroes.com"));
+console.log(getSender("steve@superheroes.com"));
+
+ // save return value in a variable to be used in the future
+const getSenderFromEmail = getSender("leo@superheroes.com");
+console.log(getSenderFromEmail);
+
+// return can stand within a function without a return value
+function doSomethingSmart() {
+    const xxx = 2;
+    console.log("test");
+
+    if (xxx === 1) {
+        console.log("x = 1"); // will not be displayed as condition is not met
+        return
+    }   
+    console.log("test 2");
+    if (xxx === 2) {
+        console.log("x = 2"); // will be displayed as condition is met
+        return // funtion is done
+    }
+    console.log("test 3"); // will not be displayed as function has ended
+}
+
+doSomethingSmart()
+
+/* ====== ARROW FUNCTIONS ======   
+    - since ES6
+    - more modern way of writing a function 
+    - there is a short version 
+    - thats what we should use
+     */ 
+
+// sample syntax for arrow function 
+const hello = (name) => { // hello is the function name
+    return "Hallo " + name;
+}
+console.log(hello("Leo!"));
+
+// getSender sample
+const getSender2 = (email) => {
+    const atIndex = email.indexOf("@"); // wir suchen den Index des @ in einer Email
+    const sender = email.slice(0, atIndex); // we want to cut the substring which
+    return sender
+}
+console.log(getSender2("leo@superheroes.com"));
+
+
+// short version general sample 
+const multiply = (x) => x * 5 ;
+console.log(multiply(4));
+
+// get sender function within one line if there is only one statment with a function
+const getSender3 = (email) => email.slice(0, email.indexOf("@"));
+const random = getSender3("leo@superheroes.com");
+console.log(random);
+/* ============================================== */
+
+
+
+/* ====== ARRAYS ======   */
+// An array is a datatype. It can hold any number of elements. Every element has a index number which designates its position.
+
+// arrays are special variables which hold multiple values at the same time. Usually they will be stored in a const. 
+
+
+// how to declare an array?
+
+const cars = ['Mercedes', 'Porsche', 'BMW', 'Tesla']; 
+console.log(cars);
+
+/* 
+    What do we see? 
+    - Every item in the array has an index number which designates its position.
+    - we see the lenght of the arry
+*/
+
+const emptyArray = []; // declare an empty array
+
+console.log(cars[0]); // access the first item in an array
+console.log(cars[2]); // acces the third item in an array
+
+// How to see the lengh of an array?
+console.log(cars.length); // access the lengh of an array
+
+// we can save every element in a variable 
+const first = cars[0];
+console.log(first);
+
+// we can save the last element in an array in a new variable 
+const last = cars[cars.length - 1];
+console.log(last);
+
+// we can ask for the index of an element in a array 
+const bmwIndex = cars.indexOf('BMW');
+console.log(bmwIndex);
+
+// We can change the value of an element in an array 
+cars[0] = 'Volvo';
+console.log(cars);
+
+// Add the contents of an array to a different one
+/* array.push(...differentArray); */
+
+// we want to add an element at the end of the array
+// push ()
+cars.push('Ford');
+console.log(cars);
+
+ // with push() we can also display the new length of the array
+const carLength = cars.push('Fiat');
+console.log(cars);
+console.log(carLength);
+
+// with pop() we can delete an element from the end of the array
+const fiat = cars.pop();
+console.log(fiat);
+
+// with shift() we can delete an element from the beginning of the array
+cars.shift();
+console.log(cars);
+
+// with unshift() we can add an element at the beginning of the array
+cars.unshift('Audi');
+console.log(cars);
+
+// with delete we can delete an element at a specific index. The length of the array will not be changed. 
+delete cars[2];
+console.log(cars);
+
