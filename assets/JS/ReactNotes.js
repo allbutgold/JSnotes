@@ -254,36 +254,36 @@ const Profile = () => {
 /* ==== more complex fetch ==== */
 
 // Weather component
-import { useState } from "react";
+import { useState } from "react";  // import use state
 
 const Weather = () => {
 
-    const [city, setCity] = useState('')
-    const [weather, setWeather] = useState(null)
-    const key = "aee547fe9e226d61c52670c75b774740"
-    const limit = 1
+    const [city, setCity] = useState('') // declare initial state for city
+    const [weather, setWeather] = useState(null) // declare initial state for weather 
+    const key = "aee547fe9e226d61c52670c75b774740" // declare key
+    const limit = 1 // declare limit
 
-    const checkWeather = () => {
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},DE&limit=${limit}&appid=${key}`)
+    const checkWeather = () => { // declare checkWether function variable
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},DE&limit=${limit}&appid=${key}`) // fetch URL with variable ${city}, ${limit} and ${key}
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            const lon = data[0].lon
-            const lat = data[0].lat
+            const lon = data[0].lon // get longitude
+            const lat = data[0].lat // get latitude
             fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&unit=metric`)
                 .then(res => res.json())
-                .then(data => setWeather(data))
+                .then(data => setWeather(data)) // get weather data
                 console.log(weather)
         })}
 
     return (
         <main>
             <div>
-                <input type={"text"} placeholder="Dein Block" onChange={(e) => setCity (e.target.value)}/>
-                <button onClick={checkWeather}>Check dein Klima</button>
+                <input type={"text"} placeholder="Dein Block" onChange={(e) => setCity (e.target.value)}/> {/* input field with onChange EventListener to fill city variable to the value of the input field */}
+                <button onClick={checkWeather}>Check dein Klima</button> {/* runs onClick the checkWeather function */}
             </div>
             {weather && 
-                <h1>{weather.main.temp}</h1>}
+                <h1>{weather.main.temp}</h1>} {/* create dynamic h1 tag and fill it with the weather.main.temp data (temprature) from the API */}
         </main>
     )
 }
