@@ -3,7 +3,7 @@
 // JavaScript is case sensetiv!! 
 /* ============================================== */
 
-/* // ====== VARIABLES ======    "let","const" and "var" (use "const" by default)
+/* //* ====== VARIABLES ======    "let","const" and "var" (use "const" by default)
 
     "let": is used to declare a changable variable (ressasign, mutate value) */
     let age = 30;
@@ -17,8 +17,8 @@
     job = "teacher";
     
 
-/* === VARIABLE NAME CONVENTIONS ===
-
+//* === VARIABLE NAME CONVENTIONS === 
+/*
 - first word starting small all follwing starting with capital letter
 - cannot start with numbers
 - Only allowed Symbols are _ and $ */
@@ -50,7 +50,7 @@ console.log($auchNope)
 
 
 
-/* // ====== DATA TYPES ======
+/* //* ====== DATA TYPES ======
 
 Number(23): floating point number
     - used for decimals and integers */
@@ -84,9 +84,9 @@ javascriptIsFun = "YES!";
 
 
 
-/* ====== OPERATORS ====== allows to transform or combine values (as well as do other things)
+//* ====== OPERATORS ====== allows to transform or combine values (as well as do other things)
 
-Basic math operators: you can do basic calculations with values and simple math operators */
+// Basic math operators: you can do basic calculations with values and simple math operators 
 const now = 2050;
 const ageLeo = now - 1994;
 const ageJeni = now - 1988;
@@ -119,8 +119,8 @@ console.log(2 == "3"); // true because the value is the same
 console.log(3 === "3"); // false becaue the dataype is not the same even if the value is right
 console.log(1 == true); // number 1 is true so it's true
 console.log(0 == false); // number 0 is false so it's true
-console.log(1 != 2); // != means value not equal to, so this is true
-console.log(1 !== 2); // !== means datatype OR value not equal to so this is true
+console.log(1 != 2); // "!="" means value not equal to, so this is true
+console.log(1 !== 2); // "!=="" means datatype OR value not equal to so this is true
 
 
 // Modulo Operator (Restwert)
@@ -153,7 +153,7 @@ console.log(ageLeo, ageJeni, averageAge);
 
 
 
-// ====== STRINGS ======
+//* ====== STRINGS ======
 
 // ==== String Methods ====
 const textOne = "Wo wohnt Stefan?";
@@ -243,7 +243,7 @@ console.log("Mein MacBook hat " + (macBook * mwst) + " gekostet!" );
 // Use an empty string " " to add a space 
 console.log(firstName + " " + lastName);
 
-/* === TEMPLATE LITERALS === : a template literal can assamble multiple pices into one final string
+/* //* === TEMPLATE LITERALS === : a template literal can assamble multiple pices into one final string
     to wirte a template string use backticks `` */
 
 const leo = "I'm " + firstName + ', a ' + (now - birthyear) + ' years old ' + job + '!';
@@ -313,7 +313,7 @@ document.write("<h2>Das ist schon besser!</h2>") // use document.write to displa
 
 
 
-// === INPUT METHODS === 
+//* === INPUT METHODS === 
 
 // window.prompt opens a prompt when loading the page where the user can input data. Can be stored in a varibale. 
 /*let howOld = window.prompt("wie alt bist du?")
@@ -360,7 +360,7 @@ headlineFour.style.fontSize = "4rem"
 
 
 
-/* ====== FUNCTIONS ====== */
+//* ====== FUNCTIONS ====== 
 
 // store HTML element in variables. define variables at the start of the document
 let headline = document.getElementById("headline");
@@ -443,7 +443,7 @@ darkMode.addEventListener("click", function() { // on click of button darkMode t
 
 
 
-/* ====== TAKING DECISIONS ======   */
+//* ====== TAKING DECISIONS ======   */
 
 // === if/else control structure === if / else statements: can take decsions using if else statements 
 const currentAge = 19;
@@ -569,8 +569,8 @@ function doSomethingSmart() {
 
 doSomethingSmart()
 
-/* ====== ARROW FUNCTIONS ======   
-    - since ES6
+// ====== ARROW FUNCTIONS ======   
+    /* - since ES6
     - more modern way of writing a function 
     - there is a short version 
     - thats what we should use
@@ -603,7 +603,7 @@ console.log(random);
 
 
 
-/* ====== ARRAYS ======   */
+//* ====== ARRAYS ======   */
 // An array is a datatype. It can hold any number of elements. Every element has a index number which designates its position.
 
 // arrays are special variables which hold multiple values at the same time. Usually they will be stored in a const. 
@@ -673,3 +673,31 @@ console.log(cars);
 delete cars[2];
 console.log(cars);
 
+
+
+
+
+
+// show images in HTML
+const images = ['./assets/img/IMG_8176.jpg', './assets/img/IMG_9397.jpg']
+const imgGallery = document.querySelector('#imgGallery');
+
+images.forEach((element) => {
+    imgGallery.innerHTML += `<img src="${element}" width='300px'> id='img ${index}'`;
+})  
+
+
+
+
+/* Framework vs Library  */
+
+
+
+
+
+/* Github commands */
+git branch dev // 
+git checkout -b dev // create a development branch and change into it
+git merge branch // merge the current branch into the development branch (fast forward merge)
+git remote add origin // https://github.com/SampleProject/ add remote repository 
+fast forward merge // only possible when there are no other changes on the branch to be merged into
