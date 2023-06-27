@@ -70,7 +70,7 @@ let children;
 
 /*  - Null: Also means "empty value"
     - Symbol: A value which is unique and cannot be changed
-    - BigInt: larger integers than the numbertype can hold
+    - BigInt: larger integers than the number type can hold
     - "typeof"(typeof): can be used to show the type of a value */
 console.log(typeof true);
 
@@ -80,8 +80,6 @@ let javascriptIsFun = true;
 //  change value 
 javascriptIsFun = "YES!";
 /* ============================================== */
-
-
 
 
 //* ====== OPERATORS ====== allows to transform or combine values (as well as do other things)
